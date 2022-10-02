@@ -5,5 +5,5 @@ Website V1 Contains Three Pages ::
 1- Login Page     
 2- News Page     
 3- Solidarity Request Page    
-### Note: For V1 Only Admins can edit on website or publish lately news
+### Note: For V1 Only ADMINS can edit on website or publish lately news
 ### Coming Versions will provide more features
