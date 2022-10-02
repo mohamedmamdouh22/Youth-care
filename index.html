@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <form action="submit.html"> 
+        <header>Login
+        <!-- <span> <img src="شعار_جامعة_بنها.jpg" width="90px" height="50px" alt="شعار جامعة بنها"></span> -->
+        </header>
+        <label for="name">User Name</label>
+        <span>*</span>
+        <input type="text" id="name" required onblur="userValidation()">
+        <p class="help"id="pl">Use upper and lowercase lettes as well</p>
+
+        <label for="pass">Password</label>
+        <span id="span">*</span>
+        <input type="password" id="pass" required onblur="passValidation()">
+        <p class="help" id="passv">Use upper and lowercase lettes as well</p>
+        <button>Login</button>
+
+    </form>
+</body>
+</html>
