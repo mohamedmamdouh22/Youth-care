@@ -9,20 +9,21 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <form action="submit.html"> 
-        <header>Login
-        <!-- <span> <img src="شعار_جامعة_بنها.jpg" width="90px" height="50px" alt="شعار جامعة بنها"></span> -->
+    <form action="submit.html" id="register"> 
+        <header >Login
+        <span><img src="شعار_جامعة_بنها.jpg" width="90px" height="50px" alt="شعار جامعة بنها" ></span>
         </header>
         <label for="name">User Name</label>
         <span>*</span>
         <input type="text" id="name" required onblur="userValidation()">
-        <p class="help"id="pl">Use upper and lowercase lettes as well</p>
+        <p class="help"id="pl">At least 6 letters , use upper and lowercase letters</p>
 
         <label for="pass">Password</label>
         <span id="span">*</span>
-        <input type="password" id="pass" required onblur="passValidation()">
-        <p class="help" id="passv">Use upper and lowercase lettes as well</p>
-        <button>Login</button>
+        <input type="password" id="pass"  onblur="passValidation()">
+        <p class="help" id="passv">Use upper and lowercase letters as well</p>
+        <button  onclick="userValidation(), passValidation() " >Login</button>
+
 
     </form>
 </body>
