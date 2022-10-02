@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(3, 21, 48);
+}
+.top h1 {
+  text-align: right;
+  padding-top: 95px;
+  font-size: 50px;
+  color: white;
+}
+.top {
+  height: 25%;
+  /* background-color: rgb(127, 160, 211);*/
+  border: 1px solid transparent;
+  background-image: url("cov.png");
+  background-repeat: no-repeat;
+
+  background-size: cover;
+}
+.top img {
+  width: 300px;
+  float: right;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(33, 62, 104);
+}
+.log {
+  float: left;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 25px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+li a:hover {
+  background-color: rgb(47, 83, 124);
+}
+#content {
+  width: auto;
+  height: auto;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+.news {
+  text-align: right;
+
+  margin-left: 85%;
+  font-size: 25px;
+  padding-bottom: 0px;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+
+  background-color: rgb(188, 205, 214);
+
+  padding: 10px;
+  margin: 20px;
+  gap: 5px;
+  border-radius: 12px;
+  transition: box-shadow 2s, margin 1s;
+}
+#gallery:hover {
+  box-shadow: 0 4px 30px 0 rgba(17, 17, 17, 0.2),
+    0 6px 50px 0 rgba(34, 32, 32, 0.19);
+  border: 2px solid black;
+}
+
+#gallery > div {
+  background-color: rgb(188, 205, 214);
+
+  padding: 20px 0;
+  font-size: 25px;
+}
+#gallery img {
+  border: 2px solid black;
+  width: 400px;
+  height: 300px;
+}
+#desc {
+  grid-column: 3 / span 4;
+  text-align: right;
+}
+
+@media only screen and (max-width: 900px) {
+  ul,
+  li,
+  .log {
+    float: none;
+  }
+  ul {
+    position: unset;
+    width: 100%;
+  }
+  #gallery img {
+    grid-column: span 5;
+    width: 500px;
+    height: 400px;
+  }
+  #desc {
+    grid-column: span 5;
+  }
+  #content {
+    width: 100%;
+  }
+  .news {
+    margin-left: 50%;
+  }
+  #content{
+    width: auto;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .top h1 {
+    padding-top: 200px;
+    padding-right: 20px;
+  }
+  #gallery {
+    display: grid;
+    grid-template-rows: 400px auto;
+  
+    background-color: rgb(188, 205, 214);
+  
+    padding: 10px;
+    margin: 20px;
+    gap: 5px;
+    border-radius: 12px;
+    transition: box-shadow 2s, margin 1s;
+  }
+  #gallery img {
+    grid-column: span 1;
+    
+    width: 350px;
+    height: 400px;
+  }
+}
+
+
+

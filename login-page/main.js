@@ -14,10 +14,10 @@ function userValidation(){
 
 function passValidation(){
     myPass= document.getElementById('pass').value;
-    regex= /[A-Za-z]/;
+    regex= /^[a-zA-Z0-9!#$%&@]{8,}$/;
     if(regex.test(myPass)==0){
         document.getElementById('passv').style.color='red';
-        document.getElementById('passv').innerHTML='Please include letters in lower or upper case';
+        document.getElementById('passv').innerHTML='Required(more than 8)';
         return false;
     }else{
         document.getElementById('passv').style.color='green';
@@ -31,9 +31,8 @@ function passValidation(){
 function unCorrect(){
     if(userValidation()===false || passValidation()===false){
         window.alert("please enter the user name and pasword in the correct way in the right way");
-        return false;
     }else{
-    window.alert("Thank you");
+        window.alert("Thank you");
     window.location.href="../admin.html";
     return  true;
     }
