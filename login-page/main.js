@@ -27,11 +27,15 @@ function passValidation(){
 
 }
 
-document.getElementById("register").onsubmit = function() {
-    if(userValidation()===false || passValidation()===false){
-        return false;
-    }
-    return true;
-}
 
+function unCorrect(){
+    if(userValidation()===false || passValidation()===false){
+        window.alert("please enter the user name and pasword in the correct way in the right way");
+        return false;
+    }else{
+    window.alert("Thank you");
+    window.location.href="../admin.html";
+    return  true;
+    }
+}
 

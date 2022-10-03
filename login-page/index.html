@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل الدخول</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    
 </head>
 <body>
-    <form action="submit.html" id="register"> 
+    <form action="" id="register"> 
         <header >Login
         <span><img src="شعار_جامعة_بنها.jpg" width="90px" height="50px" alt="شعار جامعة بنها" ></span>
         </header>
@@ -20,11 +20,10 @@
 
         <label for="pass">Password</label>
         <span id="span">*</span>
-        <input type="password" id="pass"  onblur="passValidation()">
+        <input type="password" id="pass"  onblur="passValidation()" required>
         <p class="help" id="passv">Use upper and lowercase letters as well</p>
-        <button  onclick="userValidation(), passValidation() " >Login</button>
-
-
+        <button  onclick="unCorrect() " >Login</button>
     </form>
+    <script src="main.js"></script>
 </body>
 </html>
