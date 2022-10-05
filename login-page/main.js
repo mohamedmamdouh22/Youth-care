@@ -24,15 +24,12 @@ function passValidation(){
         document.getElementById('passv').innerHTML='✓✓'
         return true;
     }
-
 }
 
 
 function unCorrect(){
     if(userValidation()===false || passValidation()===false){
-        
         document.getElementById('pass').value="";
         return false;
     }
 }
-
