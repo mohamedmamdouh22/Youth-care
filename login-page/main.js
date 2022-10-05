@@ -1,9 +1,9 @@
 function userValidation(){
-    nameregex=/[A-Za-z]{6,}/;
+    nameregex=/[A-Za-z0-9]{6,}/;
     userName=document.getElementById('name').value;
     if(nameregex.test(userName)==0){
         document.getElementById('pl').style.color='red';
-        document.getElementById('pl').innerHTML='Please enter at least 6 letters including this first lower or upper case ';
+        document.getElementById('pl').innerHTML='Please enter at least 6';
         return false;
     }else{
         document.getElementById('pl').style.color='green';
@@ -30,12 +30,9 @@ function passValidation(){
 
 function unCorrect(){
     if(userValidation()===false || passValidation()===false){
-        window.alert("please enter the user name and pasword in the correct way in the right way");
+        
+        document.getElementById('pass').value="";
         return false;
-    }else{
-        window.alert("Thank you");
-        window.location.href="../admin page/admin.html";
-        return  true;
     }
 }
 
