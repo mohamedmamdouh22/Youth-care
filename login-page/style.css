@@ -22,6 +22,19 @@ form{
     color: #333;
     border-radius: 10px;
     overflow: auto;
+
+}
+
+@media screen and (max-width: 600px) {
+    form{width: 55%;}
+
+}
+@media screen and (max-width: 324px){
+    img{display: none;}
+}
+
+@media screen and (max-width: 235px){
+    input{width: 20%;}
 }
 
 header{
@@ -60,6 +73,10 @@ input{
 
     }
     
+@media screen and (max-width: 400px){
+    input{width: 50%;}
+    
+}
 .help{
     margin-left: 20px;
     font-size: 0.8em;
