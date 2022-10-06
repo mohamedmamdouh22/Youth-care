@@ -9,20 +9,20 @@
     
 </head>
 <body>
-    <form action="../admin page/admin.html" id="register"> 
+    <form action="../includes/login_manager.php" id="register" method="POST"> 
         <header >Login
         <span><img src="شعار_جامعة_بنها.jpg" width="90px" height="50px" alt="شعار جامعة بنها" ></span>
         </header>
         <label for="name">User Name</label>
         <span>*</span>
-        <input type="text" id="name" required onblur="userValidation()">
+        <input type="text" id="name" name="uname" required onblur="userValidation()">
         <p class="help"id="pl">At least 6 letters , use upper, lowercase letters and numbers</p>
 
         <label for="pass">Password</label>
         <span id="span">*</span>
-        <input type="password" id="pass"  onblur="passValidation()" required>
+        <input type="password" id="pass" name="upass" onblur="passValidation()" required>
         <p class="help" id="passv">Use upper and lowercase letters as well</p>
-        <button  onclick="unCorrect() " >Login</button>
+        <button name="form-submit" onclick="unCorrect() " >Login</button>
     </form>
     <script src="main.js"></script>
 </body>

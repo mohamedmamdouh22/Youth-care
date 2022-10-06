@@ -16,8 +16,14 @@
     <div class="lista">
       <ul>
         <li><a class="active" href="admin.html">الاخبار</a></li>
-        <li><a href="add">إضافة خبر</a></li>
-        <li><a href="requests.html">طلبات التكافل</a></li>
+        <?php
+          session_start();
+          if ($_SESSION['isadmin'] === true) {
+            echo '<li><a href="add">إضافة خبر</a></li>';
+            echo '<li><a href="requests.html">طلبات التكافل</a></li>';
+          }
+          session_destroy();
+        ?>
         <li class="log"><a href="../login-page/index.html">تسجيل الدخول</a></li>
       </ul>
     </div>
