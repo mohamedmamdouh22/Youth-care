@@ -50,6 +50,12 @@ li a {
 li a:hover {
   background-color: rgb(47, 83, 124);
 }
+
+li a.active {
+  background-color: #1aaada;
+  color: white;
+}
+
 #content {
   width: auto;
   height: auto;
