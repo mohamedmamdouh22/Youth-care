@@ -31,10 +31,11 @@ function passValidation(){
 function unCorrect(){
     if(userValidation()===false || passValidation()===false){
         window.alert("please enter the user name and pasword in the correct way in the right way");
+        return false;
     }else{
-        // window.alert("Thank you");
+        window.alert("Thank you");
         window.location.href="../admin page/admin.html";
-    return  true;
+        return  true;
     }
 }
 
