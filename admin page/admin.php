@@ -15,12 +15,13 @@
     </div>
     <div class="lista">
       <ul>
-        <li><a class="active" href="admin.html">الاخبار</a></li>
+        <li><a class="active" href="#">الاخبار</a></li>
         <?php
           session_start();
-          if ($_SESSION['isadmin'] === true) {
+          if ($_SESSION['isadmin'] === true) 
+          {
             echo '<li><a href="add">إضافة خبر</a></li>';
-            echo '<li><a href="requests.html">طلبات التكافل</a></li>';
+            echo '<li><a href="../Solidarity Request Page/Solidarity_Request_Page.html">طلبات التكافل</a></li>';
           }
           session_destroy();
         ?>
@@ -31,69 +32,25 @@
       <div class="news">
         <h1>أحدث الأخبار</h1>
       </div>
-      <div id="gallery">
-        <div>
-          <img src="شعار_جامعة_بنها.png" alt="new1" />
-        </div>
-        <div id="desc">
-          <h2>نبذة تاريخية عن جامعة بنها</h2>
-          <p>
-            انت جامعة بنها فرع لجامعة الزقازيق منذ عام 1976 بقرار رئيس الجمهورية
-            رقم 1142 بتاريخ 25/11/1976 وكانت تضم خمس كليات (الزراعة بمشتهر
-            الهندسة بشبرا التجارة والطب البشري والتربية ببنها) أسست كلية الزراعة
-            عام 1911م والتي تعتبر من أقدم كليات الزراعة علي مستوي الجمهورية. صدر
-            القرار الوزاري رقم 278 لسنة 1981 بإنشاء كلية العلوم والآداب ببنـها
-            والطب البيطري بمشتهر تم إنشاء كلية الحقوق كفرع من كلية حقوق الزقازيق
-            عام 1990 وضمها لفرع بنها بالقرار الوزاري رقم 287 لسنه 1994 تم إنشاء
-            المعهد العالي للتمريض ببنها بالقرار الوزاري رقم 301 لسنه 1992 وبعد
-            ذلك أصبحت كلية التمريض عام 1996. تم ضم كلية التربية النوعية لفرع
-            بنها بالقرار الوزاري رقم 329 بتاريخ 1/10/1998 صدر القرار الجمهوري
-            رقم 84 لسنة (2005) بفصل فرع جامعة الزقازيق ببنها وأصبحت جامعة بنها
-          </p>
-        </div>
-      </div>
-
-      <div id="gallery">
-        <div>
-          <img src="شعار_جامعة_بنها.png" alt="new1" />
-        </div>
-        <div id="desc">
-          <h2>نبذة تاريخية عن جامعة بنها</h2>
-          <p>
-            تم ضم المعهد العالي للتكنولوجيا لجامعة بنها بالقرار الجمهوري رقم 83
-            بتاريخ 7/3/2006 كما تم إنشاء كلية الحاسبات والمعلومات بالقرار
-            الجمهوري رقم 267 بتاريخ 20/7/2006م. تعتبر جامعة بنها الثالثة عشرة من
-            حيث النشأة بين الجامعات السبعة عشرة. ويشغل الحرم الجـــامعي عـدة
-            أماكن بمدن بنها ومشتهر وشبرا والعبور، وتضم الجامعة 16 كلية وهم كليات
-            الطب، التمريض، العلوم، التربية، التربية الرياضية، التجارة، الآداب،
-            الحقوق، التربية النوعية، الحاسبات والكاء الإصطناعي وهندسة بنها
-            (المعهد العالي التكنولوجيا سابقا)، العلاج الطبيعي بمدينة بنها
-            بالاضافه إلى كليتي الزراعة والطب البيطري بمشتهر وكلية الهندسة بشبرا
-            وقد تم تخصيص عدد 108 فـدان بمدينة العبور لجامعة بنها لمواجهة
-            التوسعات المستقبلية للجامعة.
-          </p>
-        </div>
-      </div>
-
-      <div id="gallery">
-        <div><img src="شعار_جامعة_بنها.png" alt="new1" /></div>
-        <div id="desc">
-          <h2>head</h2>
-          <p>
-            idcvhasiuiaushvc<br />ffuyshgduyd<br />sgsdgdgdfgdfg<br />rfsgfsfgv
-          </p>
-        </div>
-      </div>
-
-      <div id="gallery">
-        <div><img src="شعار_جامعة_بنها.png" alt="new1" /></div>
-        <div id="desc">
-          <h2>head</h2>
-          <p>
-            idcvhasiuiaushvc<br />ffuyshgduyd<br />sgsdgdgdfgdfg<br />rfsgfsfgv
-          </p>
-        </div>
-      </div>
+      <?php
+        include "../php_soliders/dbconfig.php";
+        $months = array("Jan" => "يناير", "Feb" => "فبراير", "Mar" => "مارس", "Apr" => "أبريل", "May" => "مايو", "Jun" => "يونيو", "Jul" => "يوليو", "Aug" => "أغسطس", "Sep" => "سبتمبر", "Oct" => "أكتوبر", "Nov" => "نوفمبر", "Dec" => "ديسمبر");
+        $news = $pdo->query("SELECT * FROM news ORDER BY pubdate DESC", PDO::FETCH_ASSOC);
+        while($new = $news->fetch())
+        {
+          echo '<div id="gallery">';
+            echo "<div>";
+              echo '<img src="شعار_جامعة_بنها.png" alt="new1" />';
+            echo "</div>";
+            echo '<div id="desc">';
+              echo "<h2>" . $new["title"] . "</h2>";
+              $pub_date = date_create($new["pubdate"]);
+              echo "<h5>" . date_format($pub_date, "Y") . " - " . $months[date_format($pub_date, "M")] . " - " . date_format($pub_date, "d") . "</h5>";
+              echo "<p>" . $new['content'] . "</p>";
+            echo '</div>';
+          echo '</div>';
+        }
+      ?>
     </div>
   </body>
 </html>

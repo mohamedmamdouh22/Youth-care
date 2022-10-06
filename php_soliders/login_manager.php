@@ -7,11 +7,9 @@ else
     $_SESSION['uname'] = $usname = $_POST['uname'];
     $_SESSION['upwd'] = $uspwd = $_POST['upass'];
     $_SESSION['isadmin'] = false;
-    $pdo = new PDO("mysql:host=localhost; dbname=youth_care", "root", "");
-    if ($pdo === null)
-        echo "Connection Error : An Error Happen Within Connecting DataBase... try another time";
-    else 
+    try
     {
+        include "./dbconfig.php";
         $qres = $pdo->query("SELECT userpassword FROM admins WHERE username='$usname'")->fetch();
         if($qres === false || in_array($uspwd, $qres) === false)
         {
@@ -21,6 +19,10 @@ else
         }
         else
             $_SESSION['isadmin'] = true;
-        header("location: ../admin page/admin.php");
+        header("location: ../admin page/admin.php?login=success");
+    }
+    catch(PDOException $ex)
+    {
+        echo $ex->getMessage();
     }
 }
