@@ -25,15 +25,15 @@ form{
 
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     form{width: 55%;}
 
 }
-@media screen and (max-width: 324px){
+@media only screen and (max-width: 324px){
     img{display: none;}
 }
 
-@media screen and (max-width: 235px){
+@media only screen and (max-width: 235px){
     input{width: 20%;}
 }
 
@@ -73,7 +73,7 @@ input{
 
     }
     
-@media screen and (max-width: 400px){
+@media only screen and (max-width: 400px){
     input{width: 50%;}
     
 }
