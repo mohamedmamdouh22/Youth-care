@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ادارة رعاية الشباب بكلية شبرا جامعة بنها</title>
+    <link rel="stylesheet" href="addstyle.css" />
+  </head>
+  <style></style>
+  <body>
+    <div class="top">
+      <img src="شعار_جامعة_بنها.png" />
+      <h1>ادارة رعاية الشباب</h1>
+    </div>
+    <div class="lista">
+      <ul>
+        <li><a href="admin.html">الاخبار</a></li>
+        <li><a href="add new.html">إضافة خبر</a></li>
+        <li><a href="../Solidarity Request Page/Solidarity_Request_Page.html">طلبات التكافل</a></li>
+        <li class="log"><a href="..\login-page\index.html">تسجيل الدخول</a></li>
+      </ul>
+    </div>
+    <div id="content">
+      <div class="news">
+        <h1> إضافة خبر</h1>
+      </div>
+      
+      <div class="form">
+      <form action="" id="addition" method="post">
+        <table>
+            <tr>
+
+                <td> <input type="text" id="address" name="address" dir="rtl"></td>
+               <td> <label for="address"> عنوان الخبر</label></td>
+               
+            </tr>
+            <tr>
+
+                <td><textarea rows="10" cols="50" name="comment" form="addition" dir="rtl"></textarea></td>
+               <td> <label for="cont"> محتوى الخبر</label></td>
+               
+            </tr>
+            <tr>
+
+                <td><input type="file" id="myfile" name="myfile" accept="image/*" dir="rtl"></td>
+                <td><label for="myfile"> إضافة صورة </label></td>
+                
+            </tr>
+            <tr>
+                <td colspan="2" style="padding: 30px;"><button name="submitting" type="submit">إضافة</button></td>
+            </tr>
+
+        </table>
+      </form> 
+      </div>
+    </div>
+  </body>
+</html>

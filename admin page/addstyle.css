@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(3, 21, 48);
+}
+.top h1 {
+  text-align: right;
+  padding-top: 95px;
+  font-size: 50px;
+  color: white;
+}
+.top {
+  height: 25%;
+  /* background-color: rgb(127, 160, 211);*/
+  border: 1px solid transparent;
+  background-image: url("cov.png");
+  background-repeat: no-repeat;
+
+  background-size: cover;
+}
+.top img {
+  width: 300px;
+  float: right;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(33, 62, 104);
+}
+.log {
+  float: left;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 25px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+li a:hover {
+  background-color: rgb(47, 83, 124);
+}
+
+li a.active {
+  background-color: #1aaada;
+  color: white;
+}
+
+#content {
+  width: auto;
+  height: auto;
+  background-color: white;
+  padding: 10px;
+  margin: 10px;
+}
+.news {
+  text-align: right;
+
+  margin-left: 85%;
+  font-size: 25px;
+  padding-bottom: 0px;
+}
+
+.form{
+    
+    font-size: 40px;
+    background-color: rgb(188, 205, 214);
+    margin: 20px;
+
+}
+
+table{
+    width: 100%;
+    border: 5px solid rgb(12, 36, 114);
+    border-collapse: collapse;
+   
+    
+}
+td{
+   
+    text-align: center;
+    padding: 20px;
+    
+}
+#address{
+    width: 50%;
+    height: 40px;
+    font-size: 35px;
+    float: right;
+}
+textarea{
+    float: right;
+    font-size: 30px;
+}
+#myfile{
+    font-size: 30px;
+    float: right;
+}
+
+button{
+    width: 7%;
+    height: 60px;
+    font-size: 35px;
+    background-color: rgb(12, 36, 114);
+    color: white;
+    transition: border-radius 0.3s, width 0.3s;
+}
+button:hover{
+    background-color: rgb(72, 86, 134);
+    border-radius: 10px;
+    width: 8%;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+  ul,
+  li,
+  .log {
+    float: none;
+  }
+  ul {
+    position: unset;
+    width: 100%;
+  }
+
+  
+  .news {
+    margin-left: 50%;
+  }
+  #content {
+    width: auto;
+    height: auto;
+  }
+ .form{
+    overflow-x: auto;
+ }
+ button{
+    width: 10%;
+ }
+ button:hover{
+ 
+  width: 12%;
+}
+
+}
+
+@media only screen and (max-width: 700px) {
+  .top h1 {
+    padding-top: 200px;
+    padding-right: 20px;
+  }
+
+  .news {
+    margin-left: 30%;
+  }
+}
