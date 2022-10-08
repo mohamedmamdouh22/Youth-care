@@ -1,3 +1,12 @@
+<?php
+  // if($_GET['login'] == 'success')
+  // {
+  //   echo '<script>';
+  //   echo 'alert("أهلا بك فى إدارة رعاية الشباب بكلية هندسة شبرا")';
+  //   echo '</script>';
+  // }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +19,7 @@
   <style></style>
   <body>
     <div class="top">
-      <img src="شعار_جامعة_بنها.png" />
+      <img src="logo.png"/>
       <h1>ادارة رعاية الشباب</h1>
     </div>
     <div class="lista">
@@ -18,12 +27,11 @@
         <li><a class="active" href="#">الاخبار</a></li>
         <?php
           session_start();
-          if ($_SESSION['isadmin'] === true) 
+          if (isset($_SESSION['isadmin']) && $_SESSION['isadmin'] === true) 
           {
-            echo '<li><a href="add">إضافة خبر</a></li>';
+            echo '<li><a href="./add new.html">إضافة خبر</a></li>';
             echo '<li><a href="../Solidarity Request Page/Solidarity_Request_Page.html">طلبات التكافل</a></li>';
           }
-          session_destroy();
         ?>
         <li class="log"><a href="../login-page/index.html">تسجيل الدخول</a></li>
       </ul>
@@ -34,17 +42,32 @@
       </div>
       <?php
         include "../php_soliders/dbconfig.php";
-        $months = array("Jan" => "يناير", "Feb" => "فبراير", "Mar" => "مارس", "Apr" => "أبريل", "May" => "مايو", "Jun" => "يونيو", "Jul" => "يوليو", "Aug" => "أغسطس", "Sep" => "سبتمبر", "Oct" => "أكتوبر", "Nov" => "نوفمبر", "Dec" => "ديسمبر");
+        $months = array(
+          "Jan" => "يناير", 
+          "Feb" => "فبراير", 
+          "Mar" => "مارس", 
+          "Apr" => "أبريل", 
+          "May" => "مايو", 
+          "Jun" => "يونيو", 
+          "Jul" => "يوليو", 
+          "Aug" => "أغسطس", 
+          "Sep" => "سبتمبر", 
+          "Oct" => "أكتوبر", 
+          "Nov" => "نوفمبر", 
+          "Dec" => "ديسمبر"
+        );
         $news = $pdo->query("SELECT * FROM news ORDER BY pubdate DESC", PDO::FETCH_ASSOC);
         while($new = $news->fetch())
         {
           echo '<div id="gallery">';
             echo "<div>";
-              echo '<img src="شعار_جامعة_بنها.png" alt="new1" />';
+            ?>
+            <img src="../php_soliders/uploads/<?=$new['imgsrc']?>" alt="news Image" />
+            <?php
             echo "</div>";
             echo '<div id="desc">';
-              echo "<h2>" . $new["title"] . "</h2>";
-              $pub_date = date_create($new["pubdate"]);
+              echo "<h2>" . $new['title'] . "</h2>";
+              $pub_date = date_create($new['pubdate']);
               echo "<h5>" . date_format($pub_date, "Y") . " - " . $months[date_format($pub_date, "M")] . " - " . date_format($pub_date, "d") . "</h5>";
               echo "<p>" . $new['content'] . "</p>";
             echo '</div>';
