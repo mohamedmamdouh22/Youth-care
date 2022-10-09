@@ -8,8 +8,7 @@ else
     $ndate = date("Y-m-d H:i:s");
 
     $imgName = $_FILES['image']['name'];    
-    $imgTmpName = $_FILES['image']['tmp_name'];    
-    $imgPath = $_FILES['image']['full_path'];
+    $imgTmpName = $_FILES['image']['tmp_name'];  
     $imgError = $_FILES['image']['error'];
     $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
     $allowedExt = array("jpg", "jpeg", "png");
@@ -20,8 +19,8 @@ else
         if (!is_dir('uploads')) mkdir('uploads');
         $img_new_name = uniqid("IMG-", true) . "." . $imgExt;
         $imgdest = 'uploads/' . $img_new_name;
-        $upResult  = move_uploaded_file($imgTmpName, $imgdest);
-        if(!$upResult || $imgError !== 0) 
+        $upload_response  = move_uploaded_file($imgTmpName, $imgdest);
+        if(!$upload_response || $imgError !== 0) 
             echo  "Uploading Error : There An Error Happen Within Uploading your file ... try another time!";
         else
         {
