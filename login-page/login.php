@@ -9,7 +9,7 @@
     
 </head>
 <body>
-    <form action="../php_soliders/login_manager.php" id="register" method="POST"> 
+    <form action="../php-soliders/login_manager.php" id="register" method="POST"> 
         <header >Login
         <span><img src="logo.jpg" width="90px" height="50px" alt="شعار جامعة بنها" ></span>
         </header>

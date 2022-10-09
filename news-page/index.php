@@ -33,7 +33,7 @@
         <h1>أحدث الأخبار</h1>
       </div>
       <?php
-        include "../php_soliders/dbconfig.php";
+        include "../php-soliders/dbconfig.php";
         $months = array(
           "Jan" => "يناير", 
           "Feb" => "فبراير", 
@@ -54,7 +54,7 @@
           echo '<div id="gallery">';
             echo "<div>";
             ?>
-            <img src="../php_soliders/uploads/<?=$new['imgsrc']?>" alt="news Image" />
+            <img src="../php-soliders/uploads/<?=$new['imgsrc']?>" alt="news Image" />
             <?php
             echo "</div>";
             echo '<div id="desc">';
