@@ -1,6 +1,6 @@
 <?php
 if (!isset($_POST['form-submit']))
-    header("location: ../login-page/login.html");
+    header("location: ../login-page/login.php");
 else
 {
     session_start();
@@ -13,10 +13,7 @@ else
         if($qres === false || in_array($uspwd, $qres) === false)
             header("location: ../login-page/login.php?logstatus=fail");
         else 
-        {
-            $_SESSION['islogined'] = true;
-            header("location: ../admin page/index.php?logstatus=success");
-        }
+            header("location: ../news-page/index.php?logstatus=success&adminlogin=yes");
     }
     catch(PDOException $ex)
     {

@@ -18,13 +18,12 @@
         <li><a class="active" href="#">الاخبار</a></li>
         <?php
           session_start();
-          
           if (isset($_GET['logstatus']) && $_GET['logstatus'] === 'success')
           {
-            echo '<li><a href="./add new.html">إضافة خبر</a></li>';
-            echo '<li><a href="../Solidarity Request Page/Solidarity_Request_Page.html">طلبات التكافل</a></li>';
+            echo '<li><a href="./add_new.html">إضافة خبر</a></li>';
+            echo '<li><a href="../takaful-Page/takaful_info.html">طلبات التكافل</a></li>';
           }
-        if(!isset($_SESSION['islogined']) || $_SESSION['islogined'] === false)  
+        if(!isset($_GET['adminlogin']))  
           echo '<li class="log"><a href="../login-page/login.php">تسجيل كمشرف</a></li>';
         ?>
       </ul>

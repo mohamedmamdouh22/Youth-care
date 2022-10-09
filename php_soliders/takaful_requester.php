@@ -1,6 +1,6 @@
 <?php
 if (!isset($_POST['req_submit']))
-    header("location: ../Solidarity Request Page/Solidarity_Request_Form.html");
+    header("location: ../takaful-Page/takaful_Form.html");
 else
 {
     $email = $_POST['email'];
@@ -16,7 +16,7 @@ else
         $req_response = $pdo->query($natid_request)->fetch();
         if ($req_response === false) 
         {
-            $insert_command = "INSERT INTO requests (`id`, `name`, `nath_id`, `phone`, `mail`, `depr`, `year`) VALUES (NULL, '$fname', '$natId', '$phone', '$email', '$dep', '$year')";
+            $insert_command = "INSERT INTO requests VALUES (NULL, '$fname', '$natId', '$phone', '$email', '$dep', '$year')";
             $insert_response = $pdo->exec($insert_command);
         } 
         else
@@ -25,7 +25,7 @@ else
             echo "alert('هذا المستخدم موجود بالفعل يا فتى');";
             echo "</script>";
         }
-        header("location: ../admin page/index.php?request=success&logstatus=success");
+        header("location: ../news-page/index.php?request=success&logstatus=success");
     }
     catch(PDOException $ex)
     {

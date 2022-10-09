@@ -1,6 +1,6 @@
 <?php
 if (!isset($_POST['btn-submit']) || !isset($_FILES['image']))
-    header("location: ../admin page/add new.html");
+    header("location: ../news-page/add_new.html");
 else
 {
     $ntitle = $_POST['headtitle'];
@@ -33,7 +33,7 @@ else
             {
                 echo $ex->getMessage();
             }
-            header("location: ../admin page/admin.php?upload=success");
+            header("location: ../news-page/index.php?upload=success");
         }
     }
 }
