@@ -22,7 +22,23 @@
         <span id="span">*</span>
         <input type="password" id="pass" name="upass" onblur="passValidation()" required>
         <p class="help" id="passv">Use upper and lowercase letters as well</p>
-        <button name="form-submit" onclick="unCorrect() " >Login</button>
+        <button name="form-submit" onclick="unCorrect()">Login</button>
+
+        <?php
+            if(isset($_GET['logstatus']) && $_GET['logstatus'] === 'fail')
+            {
+                /*
+                    فى حالة انه فى اى غلطة ف تسجيل الدخول 
+                    1- ادمن نسى الباسوورد
+                    2- طالب مغفل
+                    لازم يظهر يقول :
+                    حدث خطأ فى تسجيل الدخول
+                    لازم يظهر اتنين ازرار
+                    1- العودة الى صفحة الاخبار
+                    2- اعادة تسجيل الدخول
+                */
+            }
+        ?>
     </form>
     <script src="main.js"></script>
 </body>

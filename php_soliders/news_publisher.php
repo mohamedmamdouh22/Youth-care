@@ -11,9 +11,9 @@ else
     $imgTmpName = $_FILES['image']['tmp_name'];  
     $imgError = $_FILES['image']['error'];
     $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
-    $allowedExt = array("jpg", "jpeg", "png");
+    $allowedExt = array("jpg", "jpeg", "png", "gif");
     if (!in_array($imgExt, $allowedExt)) 
-        echo "Extension Error : Only Allowed File Extensions are jpg , png , jpeg !";
+        echo "Extension Error : Only Allowed File Extensions are jpg , png , jpeg , gif !";
     else 
     {
         if (!is_dir('uploads')) mkdir('uploads');

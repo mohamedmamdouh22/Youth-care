@@ -1,12 +1,3 @@
-<?php
-  // if($_GET['login'] == 'success')
-  // {
-  //   echo '<script>';
-  //   echo 'alert("أهلا بك فى إدارة رعاية الشباب بكلية هندسة شبرا")';
-  //   echo '</script>';
-  // }
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,13 +18,15 @@
         <li><a class="active" href="#">الاخبار</a></li>
         <?php
           session_start();
-          if (isset($_SESSION['isadmin']) && $_SESSION['isadmin'] === true) 
+          
+          if (isset($_GET['logstatus']) && $_GET['logstatus'] === 'success')
           {
             echo '<li><a href="./add new.html">إضافة خبر</a></li>';
             echo '<li><a href="../Solidarity Request Page/Solidarity_Request_Page.html">طلبات التكافل</a></li>';
           }
+        if(!isset($_SESSION['islogined']) || $_SESSION['islogined'] === false)  
+          echo '<li class="log"><a href="../login-page/login.php">تسجيل كمشرف</a></li>';
         ?>
-        <li class="log"><a href="../login-page/index.html">تسجيل الدخول</a></li>
       </ul>
     </div>
     <div id="content">
