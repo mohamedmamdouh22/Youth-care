@@ -17,7 +17,6 @@
       <ul>
         <li><a class="active" href="#">الاخبار</a></li>
         <?php
-          session_start();
           if (isset($_GET['logst']) && $_GET['logst'] === 'success')
           {
             echo '<li><a href="./add_new.html">إضافة خبر</a></li>';
