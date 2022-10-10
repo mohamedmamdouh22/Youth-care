@@ -6,6 +6,57 @@ body {
   font-family: sans-serif;
   background-color:aliceblue;
 }
+.top h1 {
+  text-align: right;
+  padding-top: 95px;
+  font-size: 50px;
+  color: white;
+}
+.top {
+  height: 25%;
+  /* background-color: rgb(127, 160, 211);*/
+  border: 1px solid transparent;
+  background-image: url("cov.png");
+  background-repeat: no-repeat;
+
+  background-size: cover;
+}
+.top img {
+  width: 240px;
+  float: right;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(33, 62, 104);
+}
+.log {
+  float: left;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 25px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+li a:hover {
+  background-color: rgb(47, 83, 124);
+}
+
+li a.active {
+  background-color: #1aaada;
+  color: white;
+}
 .navbar span{
   padding: 5px;
   font-weight: bold;
