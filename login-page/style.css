@@ -83,7 +83,7 @@ input{
     color: rgb(130, 128, 128);
     }
     
-button{
+.button{
     position: relative;
     margin-top: 30px;
     margin-bottom: 30px;

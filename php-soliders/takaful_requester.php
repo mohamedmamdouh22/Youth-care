@@ -16,16 +16,25 @@ else
         $req_response = $pdo->query($natid_request)->fetch();
         if ($req_response === false) 
         {
-            $insert_command = "INSERT INTO requests VALUES (NULL, '$fname', '$natId', '$phone', '$email', '$dep', '$year')";
+            $departments = array(
+                "math&phys" => "الرياضيات والفيزيقا",
+                "electric" => "الهندسة الكهربية",
+                "mechanics" => "الهندسة الميكانيكية",
+                "civil" => "الهندسة المدنية",
+                "archticture" => "الهندسة المعمارية",
+                "geomatics" => "هندسة المساحة"
+            );
+            $classification = array(
+                "prep" => "الأعدادية",
+				"first" => "الأولي",
+                "second" => "الثانية",
+                "third" => "الثالثة",
+                "fourth" => "الرابعة"
+            );
+            $insert_command = "INSERT INTO requests VALUES (NULL, '$fname', '$natId', '$phone', '$email', '$departments[$dep]', '$classification[$year]')";
             $insert_response = $pdo->exec($insert_command);
         } 
-        else
-        {
-            echo "<script>";
-            echo "alert('هذا المستخدم موجود بالفعل يا فتى');";
-            echo "</script>";
-        }
-        header("location: ../news-page/index.php?request=success&logstatus=success");
+        header("location: ../news-page/index.php?request=success&adminlogin=yes&logst=success");
     }
     catch(PDOException $ex)
     {

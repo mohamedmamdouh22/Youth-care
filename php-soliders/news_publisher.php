@@ -33,7 +33,7 @@ else
             {
                 echo $ex->getMessage();
             }
-            header("location: ../news-page/index.php?upload=success");
+            header("location: ../news-page/index.php?upload=success&adminlogin=yes&logst=success");
         }
     }
 }

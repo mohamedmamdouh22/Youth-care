@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="logerrorstyle.css">
 </head>
 <body>
-    <form action="../php-soliders/login_manager.php" id="register" method="POST"> 
+    <form id="register" action="../php-soliders/login_manager.php" method="POST"> 
         <header >Login
         <span><img src="logo.jpg" width="90px" height="50px" alt="شعار جامعة بنها" ></span>
         </header>
@@ -22,21 +22,16 @@
         <span id="span">*</span>
         <input type="password" id="pass" name="upass" onblur="passValidation()" required>
         <p class="help" id="passv">Use upper and lowercase letters as well</p>
-        <button name="form-submit" onclick="unCorrect()">Login</button>
-
+        <button name="login-submit" onclick="unCorrect()" class="button">Login</button>
         <?php
-            if(isset($_GET['logstatus']) && $_GET['logstatus'] === 'fail')
+            if(isset($_GET['logst']) && $_GET['logst'] === "fail")
             {
-                /*
-                    فى حالة انه فى اى غلطة ف تسجيل الدخول 
-                    1- ادمن نسى الباسوورد
-                    2- طالب مغفل
-                    لازم يظهر يقول :
-                    حدث خطأ فى تسجيل الدخول
-                    لازم يظهر اتنين ازرار
-                    1- العودة الى صفحة الاخبار
-                    2- اعادة تسجيل الدخول
-                */
+                echo "<br>";
+                echo "<p>something is wrong with data entered</p>";
+                echo '<form action="../php-soliders/login_manager.php" method="POST">';
+                echo '<button class="try">try again</button>';
+                echo '<button class="return"><a href="../news-page/index.php">return to news page</a></button>';
+                echo "</form>";
             }
         ?>
     </form>
