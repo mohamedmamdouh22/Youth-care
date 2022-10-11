@@ -1,4 +1,3 @@
-
 *, ::after, ::before {
   box-sizing: border-box;
 }
@@ -101,7 +100,18 @@ button .btn1 {
   outline: none;
 }
 
+.lft{
+  left: 15%;
+}
 
+.rgh{
+  right: 10%;
+}
+
+.loon{
+  text-decoration: none;
+  color: white;
+}
 
 .btn1 {
   width: 130px;
@@ -342,8 +352,3 @@ textarea {
     width: 70%;
   }
 }
-
-
-
-
-
