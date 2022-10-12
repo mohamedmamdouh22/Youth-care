@@ -22,6 +22,7 @@ form{
     color: #333;
     border-radius: 10px;
     overflow: auto;
+    box-shadow: 5px 8px 15px #6065f7;
 
 }
 

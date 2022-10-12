@@ -33,3 +33,9 @@ function unCorrect(){
         return false;
     }
 }
+
+function unDisplay(){
+    document.getElementById('p1').innerHTML.style.display='none';
+    document.getElementById('t').innerHTML.style.display='none';
+    document.getElementsByClassName('retern').style.display='none';
+}
