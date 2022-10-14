@@ -35,9 +35,7 @@ function unCorrect(){
 }
 
 function unDisplay(){
-    // document.getElementById('p1').style.display='none';
-    document.getElementsByClassName(p1).style.display='none';
-    // document.getElementById('t').style.display='none';
-    document.getElementsByClassName(tr).style.display='none';
-    document.getElementsByClassName(retern).style.display='none';
+    document.getElementsByClassName("p1").style.display='none';
+    document.getElementsByClassName("tr").style.display='none';
+    document.getElementsByClassName("retern").style.display='none';
 }
