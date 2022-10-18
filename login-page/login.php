@@ -28,10 +28,10 @@
             {
                 echo "<br>";
                 echo '<p class="p1" id="pr">something is wrong with data entered</p>';
-                echo '<button id="t" class="tr" onclick="unDisplay()">try again</button>';
+                echo '<button id="t" name="try-submit" class="tr" onclick="unDisplay()">try again</button>';
                 echo '<button class="retern" id="go"><a href="../news-page/index.php">return to news page</a></button>';
             }
-        ?>
+            ?>
     </form>
     <script src="main.js"></script>
 </body>

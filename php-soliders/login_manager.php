@@ -1,5 +1,7 @@
 <?php
-if (!isset($_POST['login-submit']))
+if(isset($_POST['try-submit']))
+    header("location: ../login-page/login.php?logst=fail");
+else if (!isset($_POST['login-submit']))
     header("location: ../news-page/index.php");
 else
 {
