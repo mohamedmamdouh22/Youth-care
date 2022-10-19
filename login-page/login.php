@@ -27,9 +27,9 @@
             if(isset($_GET['logst']) && $_GET['logst'] === "fail")
             {
                 echo "<br>";
-                echo '<p class="p1">something is wrong with data entered</p>';
+                echo '<p class="p1" id="pr">something is wrong with data entered</p>';
                 echo '<button id="t" class="tr" onclick="unDisplay()">try again</button>';
-                echo '<button class="retern"><a href="../news-page/index.php">return to news page</a></button>';
+                echo '<button class="retern" id="go"><a href="../news-page/index.php">return to news page</a></button>';
             }
         ?>
     </form>

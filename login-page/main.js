@@ -26,7 +26,6 @@ function passValidation(){
     }
 }
 
-
 function unCorrect(){
     if(userValidation()===false || passValidation()===false){
         document.getElementById('pass').value="";
@@ -35,7 +34,7 @@ function unCorrect(){
 }
 
 function unDisplay(){
-    document.getElementsByClassName("p1").style.display='none';
-    document.getElementsByClassName("tr").style.display='none';
-    document.getElementsByClassName("retern").style.display='none';
+    document.getElementById("pr").style.display='none';
+    document.getElementById("t").style.display='none';
+    document.getElementById("go").style.display='none';
 }
